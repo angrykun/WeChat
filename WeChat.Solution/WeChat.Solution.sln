@@ -27,7 +27,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeChat.Entity", "WeChat.Ent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeChat.Common", "WeChat.Common\WeChat.Common.csproj", "{FF449B78-4B3B-4EB9-86C7-86987EE022C4}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReferenceDLL", "ReferenceDLL", "{BC8DCBF5-C474-41F5-86B7-1C93CCE73906}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReferenceDLL", "ReferenceDLL", "{382E1059-6CCD-4742-9E2F-16FCA3F33685}"
+	ProjectSection(SolutionItems) = preProject
+		ReferenceDLL\log4net.dll = ReferenceDLL\log4net.dll
+		ReferenceDLL\Newtonsoft.Json.dll = ReferenceDLL\Newtonsoft.Json.dll
+		ReferenceDLL\WeChat.BLL.dll = ReferenceDLL\WeChat.BLL.dll
+		ReferenceDLL\WeChat.Common.dll = ReferenceDLL\WeChat.Common.dll
+		ReferenceDLL\WeChat.DAL.dll = ReferenceDLL\WeChat.DAL.dll
+		ReferenceDLL\WeChat.IBLL.dll = ReferenceDLL\WeChat.IBLL.dll
+		ReferenceDLL\WeChat.IDAL.dll = ReferenceDLL\WeChat.IDAL.dll
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
