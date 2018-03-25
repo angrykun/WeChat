@@ -52,7 +52,7 @@ namespace WeChat.Common
             // 在应用程序启动时运行的代码
             //【2】log4Net配置文件
             string configFile = @"Config\Log4net.config";
-            string pathFile = string.Format("{0}{1}",AppDomain.CurrentDomain.BaseDirectory, configFile);
+            string pathFile = string.Format("{0}{1}", AppDomain.CurrentDomain.BaseDirectory, configFile);
             var file = new FileInfo(pathFile);
             log4net.Config.XmlConfigurator.Configure(file);
         }
