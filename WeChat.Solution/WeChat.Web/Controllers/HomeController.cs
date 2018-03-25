@@ -13,6 +13,7 @@ namespace WeChat.Web.Controllers
 
         public ActionResult Index()
         {
+            WeChat.Common.LogHelper.WriteLog("测试错误", Common.LogMessageType.Debug);
             return View();
         }
 
