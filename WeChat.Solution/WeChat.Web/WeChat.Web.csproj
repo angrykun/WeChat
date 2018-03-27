@@ -111,13 +111,29 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="WeChat.BLL">
+      <HintPath>..\ReferenceDLL\WeChat.BLL.dll</HintPath>
+    </Reference>
     <Reference Include="WeChat.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\ReferenceDLL\WeChat.Common.dll</HintPath>
     </Reference>
+    <Reference Include="WeChat.Entity">
+      <HintPath>..\ReferenceDLL\WeChat.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="WeChat.Enums">
+      <HintPath>..\ReferenceDLL\WeChat.Enums.dll</HintPath>
+    </Reference>
+    <Reference Include="WeChat.IBLL">
+      <HintPath>..\ReferenceDLL\WeChat.IBLL.dll</HintPath>
+    </Reference>
+    <Reference Include="WeChat.Model">
+      <HintPath>..\ReferenceDLL\WeChat.Model.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\WeiXinController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
