@@ -54,11 +54,16 @@ namespace WeChat.Web.Controllers
                 }
                 else
                 {
-                    //Response.Write("success");
-                    var model = WxRequest.Request(param);
-                    var responseResult = MessageFactory.CreateResponseMessage(model, param);
-                    LogHelper.WriteLog("【微信】响应消息：" + responseResult, LogMessageType.Info);
-                    Response.Write(responseResult);
+                    #region 废弃
+                    ////Response.Write("success");
+                    ////var model = WxRequest.Request(param);
+                    ////var responseResult = MessageFactory.CreateResponseMessage(model, param);
+                    ////LogHelper.WriteLog("【微信】响应消息：" + responseResult, LogMessageType.Info);
+                    ////Response.Write(responseResult); 
+                    #endregion
+
+                    string result = new WxService().ProcessRequest(param);
+                    Response.Write(result);
                 }
             }//验签结束
 

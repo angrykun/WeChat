@@ -12,10 +12,15 @@ namespace WeChat.Web.Controllers
     {
         //
         // GET: /Home/
-
+        public enum Enums
+        {
+            TEXT,
+            EVENT
+        }
         public ActionResult Index()
         {
-           
+            Enums _msgType= Enums.EVENT;
+            Enum.TryParse("textt", true, out _msgType);
             WeChat.Common.LogHelper.WriteLog("测试错误", Common.LogMessageType.Debug);
             return View();
         }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WeChat.Entity.ResponseEntity
+namespace WeChat.Entity
 {
     /// <summary>
     /// 音乐响应消息

@@ -52,5 +52,12 @@ namespace WeChat.Web.Tests
             //string result = new WxTextResponse().Response(model);
 
         }
+
+        [TestMethod]
+        public void MediaTest()
+        {
+            MediaApi api = new MediaApi();
+            string result = api.GetBatchMaterial("image");
+        }
     }
 }

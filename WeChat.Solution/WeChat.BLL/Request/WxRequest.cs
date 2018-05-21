@@ -18,7 +18,7 @@ namespace WeChat.BLL
         /// <param name="param"></param>
         /// <param name="bug"></param>
         /// <returns></returns>
-        public static BaseRequestMessage Request(EnterParamEntity param, bool bug = true)
+        public static string Request(EnterParamEntity param, bool bug = true)
         {
             using (StreamReader sr = new StreamReader(param.InputStream, Encoding.UTF8))
             {
@@ -50,12 +50,12 @@ namespace WeChat.BLL
                     {
                         LogHelper.WriteLog("【微信POST】,消息体：" + data, LogMessageType.Info);
                     }
-                    return MessageFactory.CreateMessage(data);
+                    return data;
                 }
                 catch (Exception ex)
                 {
                     LogHelper.WriteLog("处理【微信消息】返回错误", ex);
-                    return new BaseRequestMessage() { };
+                    return string.Empty;
                 }
             }
         }

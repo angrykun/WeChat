@@ -11,37 +11,18 @@ using System.Xml.Linq;
 namespace WeChat.BLL
 {
     /// <summary>
-    /// 响应消息
+    ///【文本回复】 
     /// </summary>
-    public class WxTextResponse : IWxResponse
+    public class WxTextResponse : WxBaseResponse
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="request"></param>
-        /// <param name="param"></param>
-        /// <returns></returns>
-        public string Execute(BaseRequestMessage request, EnterParamEntity param)
-        {
-            //
-            //业务逻辑
-            //
-            var response = new TextResponseMessage
-            {
-                ToUserName = request.FromUserName,
-                FromUserName = request.ToUserName,
-                MsgType = MsgTypeEnum.TEXT.ToString().ToLower(),
-                Content = "你好！我是公众号开发者，欢迎您关注本公众号，如有问题，请联系：13888888888"
-            };
-            return Response(response, param);
-        }
 
+        #region 微信响应方法
         /// <summary>
         /// 微信响应方法
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
-        public string Response(BaseResponseMessage response, EnterParamEntity param)
+        public override string Response(BaseResponseMessage response, EnterParamEntity param)
         {
             var _Response = response as TextResponseMessage;
             StringBuilder result = new StringBuilder();
@@ -52,6 +33,7 @@ namespace WeChat.BLL
             result.AppendFormat("<MsgType><![CDATA[{0}]]></MsgType>", _Response.MsgType);
             result.AppendFormat("<Content><![CDATA[{0}]]></Content>", _Response.Content);
             result.AppendFormat("</xml>");
+            LogHelper.WriteLog("【微信Response】响应消息明文：" + result.ToString(), LogMessageType.Info);
             if (param.IsAes)
             {
                 string data = string.Empty;
@@ -60,10 +42,13 @@ namespace WeChat.BLL
                 result = new StringBuilder(data);
                 if (encrypt != 0)
                 {
-                    LogHelper.WriteLog("【微信】响应消息加密失败", LogMessageType.Error);
+                    LogHelper.WriteLog("【微信响应文本消息】加密失败", LogMessageType.Error);
                 }
+                LogHelper.WriteLog("【微信Response】响应消息加密：" + data, LogMessageType.Info);
             }
             return result.ToString();
         }
+        #endregion
+
     }
 }

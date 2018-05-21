@@ -56,7 +56,7 @@ namespace WeChat.Common
                 }
                 if (pr.PropertyType.Name == "MsgType")//获取消息模型
                 {
-                    pr.SetValue(t, (MsgTypeEnum)Enum.Parse(typeof(MsgTypeEnum), element.Value.ToUpper()), null);
+                    pr.SetValue(t, (MsgTypeRequestEnum)Enum.Parse(typeof(MsgTypeRequestEnum), element.Value.ToUpper()), null);
                     continue;
                 }
                 if (pr.PropertyType.Name == "Event")//获取事件类型。
